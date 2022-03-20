@@ -55,8 +55,8 @@ class DayView @JvmOverloads constructor(
         paint.getTextBounds(date, 0, date.length, bounds)
         canvas.drawText(
             date,
-            (width / 2 - bounds.width() / 2).toFloat() - 2,
-            (height / 2 + bounds.height() / 2).toFloat(),
+            (width / 10).toFloat(),
+            (height / 4).toFloat(),
             paint
         )
     }

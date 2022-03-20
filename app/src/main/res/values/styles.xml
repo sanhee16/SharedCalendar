@@ -10,6 +10,8 @@
 
     <style name="Calendar.CalendarViewStyle">
         <item name="dayHeight">44dp</item>
+        <item name="headerHeight">60dp</item>
+        <item name="headerTextSize">20dp</item>
     </style>
 
     <style name="Calendar.ItemViewStyle">

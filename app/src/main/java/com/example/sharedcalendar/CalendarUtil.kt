@@ -15,6 +15,8 @@ class CalendarUtil private constructor() {
         val DAYS_PER_WEEK = 7
         var list = mutableListOf<CalendarItem>()
         var totalWeek = 5
+        var month = 0
+        var year = 0
 
         @Volatile
         private var instance: CalendarUtil? = null
@@ -35,6 +37,9 @@ class CalendarUtil private constructor() {
             // 월 : 1 ~ 일 : 7
             val firstDayOfWeek = firstDate.dayOfWeek.value
             val lastDayOfWeek = lastDate.dayOfWeek.value
+
+            this.year = firstDate.year
+            this.month = firstDate.monthValue
 
             var calcDate = LocalDate.of(year, month, 1)
             while (calcDate.dayOfWeek.value != 6)
