@@ -3,7 +3,6 @@ package com.example.sharedcalendar
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
 import android.text.TextPaint
@@ -21,7 +20,7 @@ class DayView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     @AttrRes private val defStyleAttr: Int = R.attr.itemViewStyle,
     @StyleRes private val defStyleRes: Int = R.style.Calendar_ItemViewStyle,
-    private var item: CalendarItem
+    private var item: DayItem
 ) : View(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
 
     private val bounds = Rect()

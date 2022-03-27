@@ -1,25 +1,23 @@
 package com.example.sharedcalendar
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Rect
 import android.os.Build
-import android.os.strictmode.CredentialProtectedWhileLockedViolation
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
 import androidx.annotation.RequiresApi
 import androidx.annotation.StyleRes
-import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
-import org.threeten.bp.format.DateTimeFormatter
 import java.lang.Integer.max
 
+@SuppressLint("ViewConstructor")
 class CalendarView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -27,7 +25,7 @@ class CalendarView @JvmOverloads constructor(
     @StyleRes defStyleRes: Int = R.style.Calendar_CalendarViewStyle
 ) : ViewGroup(ContextThemeWrapper(context, defStyleRes), attrs, defStyleAttr) {
     private var _height: Float = 0f
-    private lateinit var list: MutableList<CalendarItem>
+    private lateinit var item: MonthItem
     private var topSpace = 0f
     private var headerSize = 0f
 
@@ -37,11 +35,11 @@ class CalendarView @JvmOverloads constructor(
             topSpace = getDimension(R.styleable.CalendarView_headerHeight, 0f)
             headerSize = getDimension(R.styleable.CalendarView_headerTextSize, 0f)
         }
-        this.list = CalendarUtil.list
     }
 
-    fun makeCalendar() {
-        this.list.forEach {
+    fun makeCalendar(monthItem: MonthItem) {
+        item = monthItem
+        this.item.list.forEach {
             addView(
                 DayView(
                     context = context,
@@ -56,23 +54,20 @@ class CalendarView @JvmOverloads constructor(
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         val h = max(
             suggestedMinimumHeight,
-            (_height * CalendarUtil.totalWeek).toInt()
+            (_height * item.totalWeek).toInt()
         )
         setMeasuredDimension(getDefaultSize(suggestedMinimumWidth, widthMeasureSpec), h)
     }
 
     override fun onLayout(p0: Boolean, p1: Int, p2: Int, p3: Int, p4: Int) {
         val iWidth = (width / CalendarUtil.DAYS_PER_WEEK).toFloat()
-        val iHeight = (height / (CalendarUtil.totalWeek + 1)).toFloat()
+        val iHeight = (height / (item.totalWeek + 1)).toFloat()
 
         var index = 0
         children.forEach { view ->
             val left = (index % CalendarUtil.DAYS_PER_WEEK) * iWidth
             val top = topSpace + (index / CalendarUtil.DAYS_PER_WEEK) * iHeight
-            Log.v("sandy", "top : $top")
-
             view.layout(left.toInt(), top.toInt(), (left + iWidth).toInt(), (top + iHeight).toInt())
-
             index++
         }
     }
@@ -88,7 +83,7 @@ class CalendarView @JvmOverloads constructor(
             alpha = 90
         }
 
-        val str = String.format("%d-%02d", CalendarUtil.year, CalendarUtil.month)
+        val str = String.format("%d-%02d", item.year, item.month)
         val bounds = Rect()
         paint.getTextBounds(str, 0, str.length, bounds)
         canvas.drawText(
