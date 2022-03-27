@@ -32,15 +32,15 @@ class CalendarUtil private constructor() {
             val firstDayOfWeek = firstDate.dayOfWeek.value
             val lastDayOfWeek = lastDate.dayOfWeek.value
 
-            var calcDate = LocalDate.of(year, month, 1)
-            while (calcDate.dayOfWeek.value != 6)
-                calcDate = calcDate.plusDays(1)
-            var week = 1
-            while (calcDate < lastDate) {
-                week++
-                calcDate = calcDate.plusWeeks(1)
-            }
-            var totalWeek = week
+//            var calcDate = LocalDate.of(year, month, 1)
+//            while (calcDate.dayOfWeek.value != 6)
+//                calcDate = calcDate.plusDays(1)
+//            var week = 1
+//            while (calcDate < lastDate) {
+//                week++
+//                calcDate = calcDate.plusWeeks(1)
+//            }
+            val totalWeek = 6
 
             if (firstDayOfWeek < 7) {
                 for (i in firstDayOfWeek downTo 1) {
@@ -60,7 +60,7 @@ class CalendarUtil private constructor() {
                     list.add(calendarDate)
                 }
             }
-            return MonthItem(list, year, month, totalWeek)
+            return MonthItem(firstDate, list, year, month, totalWeek)
         }
     }
 }
