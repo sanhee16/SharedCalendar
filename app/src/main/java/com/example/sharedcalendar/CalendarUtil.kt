@@ -1,5 +1,6 @@
 package com.example.sharedcalendar
 
+import android.util.Log
 import org.threeten.bp.LocalDate
 
 
@@ -32,15 +33,16 @@ class CalendarUtil private constructor() {
             val firstDayOfWeek = firstDate.dayOfWeek.value
             val lastDayOfWeek = lastDate.dayOfWeek.value
 
-//            var calcDate = LocalDate.of(year, month, 1)
-//            while (calcDate.dayOfWeek.value != 6)
-//                calcDate = calcDate.plusDays(1)
-//            var week = 1
-//            while (calcDate < lastDate) {
-//                week++
-//                calcDate = calcDate.plusWeeks(1)
-//            }
-            val totalWeek = 6
+
+            var calcDate = LocalDate.of(year, month, 1)
+            while (calcDate.dayOfWeek.value != 6)
+                calcDate = calcDate.plusDays(1)
+            var week = 1
+            while (calcDate < lastDate) {
+                week++
+                calcDate = calcDate.plusWeeks(1)
+            }
+            val totalWeek = week
 
             if (firstDayOfWeek < 7) {
                 for (i in firstDayOfWeek downTo 1) {

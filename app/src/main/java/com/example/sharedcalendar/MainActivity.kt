@@ -30,9 +30,8 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = CalendarAdapter(list)
         binding.viewPager2.adapter = adapter
-        binding.viewPager2.setCurrentItem(4, false)
+        binding.viewPager2.setCurrentItem(3, false)
         binding.viewPager2.orientation = ViewPager2.ORIENTATION_HORIZONTAL
-
 
         binding.viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

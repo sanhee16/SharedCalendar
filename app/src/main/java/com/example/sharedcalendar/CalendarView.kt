@@ -8,6 +8,7 @@ import android.graphics.Rect
 import android.os.Build
 import android.text.TextPaint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
@@ -38,6 +39,7 @@ class CalendarView @JvmOverloads constructor(
     }
 
     fun makeCalendar(monthItem: MonthItem) {
+        removeAllViews()
         item = monthItem
         this.item.list.forEach {
             addView(

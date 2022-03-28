@@ -7,6 +7,7 @@ import android.graphics.Paint
 import android.graphics.Rect
 import android.text.TextPaint
 import android.util.AttributeSet
+import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.View
 import androidx.annotation.AttrRes
@@ -27,7 +28,6 @@ class DayView @JvmOverloads constructor(
     private var paint: Paint = Paint()
 
     init {
-        /* Attributes */
         context.withStyledAttributes(attrs, R.styleable.CalendarView, defStyleAttr, defStyleRes) {
             val dayTextSize =
                 getDimensionPixelSize(R.styleable.CalendarView_dayTextSize, 0).toFloat()

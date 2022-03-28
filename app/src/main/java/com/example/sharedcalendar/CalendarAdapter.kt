@@ -19,6 +19,7 @@ class CalendarAdapter(private var list: MutableList<MonthItem>) :
         val b = PagerItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(b)
     }
+
     val LIMIT_MAX_POS = 5
     val LIMOT_MIN_POS = 1
     val MAX_POS = 6 // nextMonth : 4 5 6
@@ -27,7 +28,8 @@ class CalendarAdapter(private var list: MutableList<MonthItem>) :
 
     // 생성된 뷰홀더에 데이터를 바인딩 해주는 함수
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.b.calendarItem.makeCalendar(list[position])
+        holder.b.data = list[position]
+        holder.onBindViewHolder(Unit, list[position])
     }
 
     override fun getItemId(position: Int): Long {
@@ -38,8 +40,8 @@ class CalendarAdapter(private var list: MutableList<MonthItem>) :
 
     // https://thdev.tech/androiddev/2020/05/25/Android-RecyclerView-Adapter-Use-DataBinding/
     class ViewHolder(val b: PagerItemBinding) : RecyclerView.ViewHolder(b.root) {
-        fun onBindViewHolder(viewModel: Any?, item: Any?) {
-            // data set (ex. b.data = ...)\
+        fun onBindViewHolder(viewModel: Any?, item: MonthItem) {
+            b.calendarItem.makeCalendar(item)
         }
     }
 
