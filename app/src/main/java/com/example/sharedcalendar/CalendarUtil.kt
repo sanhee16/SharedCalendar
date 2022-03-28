@@ -1,6 +1,7 @@
 package com.example.sharedcalendar
 
-import android.util.Log
+import com.example.sharedcalendar.data.DayItem
+import com.example.sharedcalendar.data.MonthItem
 import org.threeten.bp.LocalDate
 
 

@@ -1,7 +1,6 @@
-package com.example.sharedcalendar
+package com.example.sharedcalendar.data
 
 import org.threeten.bp.LocalDate
-import org.threeten.bp.Month
 
 data class DayItem(var date: LocalDate, var isCurrentMonth: Boolean)
 

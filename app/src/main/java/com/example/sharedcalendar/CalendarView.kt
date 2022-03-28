@@ -8,7 +8,6 @@ import android.graphics.Rect
 import android.os.Build
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.ViewGroup
 import androidx.annotation.AttrRes
@@ -16,6 +15,7 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.StyleRes
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
+import com.example.sharedcalendar.data.MonthItem
 import java.lang.Integer.max
 
 @SuppressLint("ViewConstructor")

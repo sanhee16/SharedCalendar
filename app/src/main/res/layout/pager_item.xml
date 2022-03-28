@@ -6,7 +6,7 @@
     <data>
         <variable
             name="data"
-            type="com.example.sharedcalendar.MonthItem" />
+            type="com.example.sharedcalendar.data.MonthItem" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

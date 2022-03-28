@@ -14,6 +14,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
+import com.example.sharedcalendar.data.DayItem
 
 @SuppressLint("ViewConstructor")
 class DayView @JvmOverloads constructor(
@@ -69,7 +70,7 @@ class DayView @JvmOverloads constructor(
         val itemWidthPadding = width / 16
         val itemHeightPadding = height / 40
 
-        val colorList = listOf<Int>(
+        val colorList = listOf(
             R.color.schedule_item_1,
             R.color.schedule_item_2,
             R.color.schedule_item_3,
