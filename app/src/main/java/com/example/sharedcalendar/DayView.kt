@@ -5,9 +5,9 @@ import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import android.graphics.RectF
 import android.text.TextPaint
 import android.util.AttributeSet
-import android.util.Log
 import android.view.ContextThemeWrapper
 import android.view.View
 import androidx.annotation.AttrRes
@@ -26,8 +26,10 @@ class DayView @JvmOverloads constructor(
 
     private val bounds = Rect()
     private var paint: Paint = Paint()
+    private var isCurrentMonth = false
 
     init {
+        isCurrentMonth = item.isCurrentMonth
         context.withStyledAttributes(attrs, R.styleable.CalendarView, defStyleAttr, defStyleRes) {
             val dayTextSize =
                 getDimensionPixelSize(R.styleable.CalendarView_dayTextSize, 0).toFloat()
@@ -41,11 +43,12 @@ class DayView @JvmOverloads constructor(
                 )
                 isAntiAlias = true
                 textSize = dayTextSize
-                if (!item.isCurrentMonth) alpha = 50
+                if (!item.isCurrentMonth) alpha = 30
             }
         }
     }
 
+    @SuppressLint("DrawAllocation")
     override fun onDraw(canvas: Canvas?) {
         super.onDraw(canvas)
         if (canvas == null) return
@@ -58,5 +61,50 @@ class DayView @JvmOverloads constructor(
             (height / 4).toFloat(),
             paint
         )
+        val item = RectF()
+        val itemWidthLeft = width / 20
+        val itemWidth = width / 5
+        val itemHeightTop = height / 3
+        val itemHeight = height / 10
+        val itemWidthPadding = width / 16
+        val itemHeightPadding = height / 40
+
+        val colorList = listOf<Int>(
+            R.color.schedule_item_1,
+            R.color.schedule_item_2,
+            R.color.schedule_item_3,
+            R.color.schedule_item_4,
+            R.color.schedule_item_5,
+            R.color.schedule_item_6
+        )
+
+        for (i in 0..5) {
+            val itemPaint = Paint().apply {
+                color = ContextCompat.getColor(context, colorList[i])
+                if (!isCurrentMonth) alpha = 30
+            }
+            var widthStart = 0
+            var heightStart = itemHeightTop
+            var widthEnd = 0
+            var heightEnd = heightStart + itemHeight
+            if (i < 3) {
+                widthStart = itemWidthLeft + (itemWidth + itemWidthPadding) * i
+                widthEnd = widthStart + itemWidth
+            } else {
+                widthStart = itemWidthLeft + (itemWidth + itemWidthPadding) * (i - 3)
+                heightStart += itemHeightPadding + itemHeight
+                widthEnd = widthStart + itemWidth
+                heightEnd = heightStart + itemHeight
+            }
+
+            item.set(
+                widthStart.toFloat(),
+                heightStart.toFloat(),
+                widthEnd.toFloat(),
+                heightEnd.toFloat()
+            )
+            canvas.drawRoundRect(item, 10f, 10f, itemPaint)
+        }
+
     }
 }
