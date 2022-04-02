@@ -1,4 +1,4 @@
-package com.example.sharedcalendar
+package com.sandy.sharedcalendar
 
 import org.junit.Test
 

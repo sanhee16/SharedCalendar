@@ -1,23 +1,19 @@
-package com.example.sharedcalendar.view
+package com.sandy.sharedcalendar.view
 
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
-import com.example.sharedcalendar.CalendarAdapter
-import com.example.sharedcalendar.CalendarUtil
-import com.example.sharedcalendar.data.MonthItem
-import com.example.sharedcalendar.R
-import com.example.sharedcalendar.databinding.ActivityMainBinding
-import com.example.sharedcalendar.viewModel.MainViewModel
+import com.sandy.sharedcalendar.CalendarAdapter
+import com.sandy.sharedcalendar.R
+import com.sandy.sharedcalendar.databinding.ActivityCalendarBinding
+import com.sandy.sharedcalendar.viewModel.CalendarViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.threeten.bp.LocalDate
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
-    private val vm: MainViewModel by viewModel()
+class CalendarActivity : BaseActivity() {
+    private lateinit var binding: ActivityCalendarBinding
+    private val vm: CalendarViewModel by viewModel()
     private lateinit var adapter: CalendarAdapter
 
     @RequiresApi(Build.VERSION_CODES.M)

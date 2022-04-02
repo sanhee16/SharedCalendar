@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/text_room_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="room name" />
+
+        <TextView
+            android:id="@+id/text_member_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textSize="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/text_room_name"
+            app:layout_constraintStart_toStartOf="@+id/text_room_name"
+            app:layout_constraintTop_toBottomOf="@+id/text_room_name"
+            tools:text="member1, member2 .." />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

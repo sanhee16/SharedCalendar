@@ -1,10 +1,10 @@
-package com.example.sharedcalendar
+package com.sandy.sharedcalendar
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sharedcalendar.data.MonthItem
-import com.example.sharedcalendar.databinding.PagerItemBinding
+import com.sandy.sharedcalendar.data.MonthItem
+import com.sandy.sharedcalendar.databinding.PagerItemBinding
 
 // https://woochan-dev.tistory.com/27
 class CalendarAdapter(private var list: MutableList<MonthItem>) :

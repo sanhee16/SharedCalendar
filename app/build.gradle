@@ -7,8 +7,17 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdk 31
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
     defaultConfig {
-        applicationId "com.example.sharedcalendar"
+        applicationId "com.sandy.sharedcalendar"
         minSdk 21
         targetSdk 31
         versionCode 1
@@ -36,6 +45,9 @@ android {
 }
 
 dependencies {
+    implementation "com.kakao.sdk:v2-user:2.9.0" // 카카오 로그인
+    implementation "com.kakao.sdk:v2-talk:2.9.0" // 친구, 메시지(카카오톡)
+
     // Koin main features for Android
     implementation "io.insert-koin:koin-android:$koin_version"
 // No more koin-android-viewmodel, koin-android-scope, koin-android-fragment

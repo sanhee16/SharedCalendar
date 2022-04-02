@@ -1,4 +1,4 @@
-package com.example.sharedcalendar
+package com.sandy.sharedcalendar
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,7 +14,7 @@ import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
 import androidx.core.content.ContextCompat
 import androidx.core.content.withStyledAttributes
-import com.example.sharedcalendar.data.DayItem
+import com.sandy.sharedcalendar.data.DayItem
 
 @SuppressLint("ViewConstructor")
 class DayView @JvmOverloads constructor(

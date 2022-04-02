@@ -1,9 +1,9 @@
-package com.example.sharedcalendar.viewModel
+package com.sandy.sharedcalendar.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.sharedcalendar.Event
+import com.sandy.sharedcalendar.Event
 
 open class BaseViewModel : ViewModel() {
     private val _viewEvent = MutableLiveData<Event<Any>>()
@@ -12,6 +12,8 @@ open class BaseViewModel : ViewModel() {
     companion object {
         const val SHOW_PROGRESS_BAR = "SHOW_PROGRESS_BAR"
         const val HIDE_PROGRESS_BAR = "HIDE_PROGRESS_BAR"
+
+        const val START_ACTIVITY_CREATE_ROOM = "START_ACTIVITY_MAKE_ROOM"
     }
 
     fun viewEvent(content: Any) {

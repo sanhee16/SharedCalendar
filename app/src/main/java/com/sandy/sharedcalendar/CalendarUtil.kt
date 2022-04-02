@@ -1,7 +1,7 @@
-package com.example.sharedcalendar
+package com.sandy.sharedcalendar
 
-import com.example.sharedcalendar.data.DayItem
-import com.example.sharedcalendar.data.MonthItem
+import com.sandy.sharedcalendar.data.DayItem
+import com.sandy.sharedcalendar.data.MonthItem
 import org.threeten.bp.LocalDate
 
 

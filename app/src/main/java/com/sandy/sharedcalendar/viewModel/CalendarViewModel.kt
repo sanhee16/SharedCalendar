@@ -1,13 +1,13 @@
-package com.example.sharedcalendar.viewModel
+package com.sandy.sharedcalendar.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.sharedcalendar.CalendarAdapter
-import com.example.sharedcalendar.CalendarUtil
-import com.example.sharedcalendar.data.MonthItem
+import com.sandy.sharedcalendar.CalendarAdapter
+import com.sandy.sharedcalendar.CalendarUtil
+import com.sandy.sharedcalendar.data.MonthItem
 import org.threeten.bp.LocalDate
 
-class MainViewModel : BaseViewModel() {
+class CalendarViewModel : BaseViewModel() {
     private val _initList = MutableLiveData<MutableList<MonthItem>>()
     val initList: LiveData<MutableList<MonthItem>> = _initList
     private val list = mutableListOf<MonthItem>()

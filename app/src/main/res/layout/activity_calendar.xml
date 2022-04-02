@@ -4,19 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
-            name="data"
-            type="com.sandy.sharedcalendar.data.MonthItem" />
+            name="vm"
+            type="com.sandy.sharedcalendar.viewModel.CalendarViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="20dp">
+        tools:context=".view.MainActivity">
 
-        <com.sandy.sharedcalendar.CalendarView
-            android:id="@+id/calendar_item"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,4 +1,4 @@
-package com.example.sharedcalendar.data
+package com.sandy.sharedcalendar.data
 
 import org.threeten.bp.LocalDate
 
