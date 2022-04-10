@@ -1,4 +1,4 @@
-package com.sandy.sharedcalendar
+package com.sandy.sharedcalendar.utils.calendar
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

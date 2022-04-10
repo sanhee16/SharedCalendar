@@ -18,15 +18,28 @@
 
         <Button
             android:id="@+id/btn_create_room"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="@dimen/main_btn_height"
             android:layout_marginTop="20dp"
             android:onClick="@{()-> vm.onClickCreateRoom()}"
             android:padding="@dimen/main_btn_padding"
             android:text="방 만들기"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btn_logout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/main_btn_height"
+            android:onClick="@{()-> vm.logout()}"
+            android:padding="@dimen/main_btn_padding"
+            android:text="로그아웃"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_create_room"
+            app:layout_constraintTop_toTopOf="@+id/btn_create_room"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_create_room"
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_room_list"

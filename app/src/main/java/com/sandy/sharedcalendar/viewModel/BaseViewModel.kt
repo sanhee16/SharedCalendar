@@ -14,6 +14,12 @@ open class BaseViewModel : ViewModel() {
         const val HIDE_PROGRESS_BAR = "HIDE_PROGRESS_BAR"
 
         const val START_ACTIVITY_CREATE_ROOM = "START_ACTIVITY_MAKE_ROOM"
+
+        const val REQUEST_LOGIN = "REQUEST_LOGIN"
+        const val LOGIN_SUCCESS = "LOGIN_SUCCESS"
+        const val LOGIN_FAIL = "LOGIN_FAIL"
+        const val LOGOUT_SUCCESS = "LOGOUT_SUCCESS"
+        const val LOGOUT_FAIL = "LOGOUT_FAIL"
     }
 
     fun viewEvent(content: Any) {

@@ -2,8 +2,8 @@ package com.sandy.sharedcalendar.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.sandy.sharedcalendar.CalendarAdapter
-import com.sandy.sharedcalendar.CalendarUtil
+import com.sandy.sharedcalendar.utils.calendar.CalendarAdapter
+import com.sandy.sharedcalendar.utils.calendar.CalendarUtil
 import com.sandy.sharedcalendar.data.MonthItem
 import org.threeten.bp.LocalDate
 

@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:padding="20dp">
 
-        <com.sandy.sharedcalendar.CalendarView
+        <com.sandy.sharedcalendar.utils.calendar.CalendarView
             android:id="@+id/calendar_item"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

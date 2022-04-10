@@ -1,4 +1,4 @@
-package com.sandy.sharedcalendar
+package com.sandy.sharedcalendar.utils.calendar
 
 import com.sandy.sharedcalendar.data.DayItem
 import com.sandy.sharedcalendar.data.MonthItem

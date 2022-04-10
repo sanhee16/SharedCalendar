@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
-import com.sandy.sharedcalendar.CalendarAdapter
+import com.sandy.sharedcalendar.utils.calendar.CalendarAdapter
 import com.sandy.sharedcalendar.R
 import com.sandy.sharedcalendar.databinding.ActivityCalendarBinding
 import com.sandy.sharedcalendar.viewModel.CalendarViewModel

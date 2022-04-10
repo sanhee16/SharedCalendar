@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.sandy.sharedcalendar.R
 import com.sandy.sharedcalendar.databinding.ActivityMainBinding
+import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGOUT_SUCCESS
 import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.START_ACTIVITY_CREATE_ROOM
 import com.sandy.sharedcalendar.viewModel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -32,6 +33,9 @@ class MainActivity : BaseActivity() {
             when (it.getContentIfNotHandled()) {
                 START_ACTIVITY_CREATE_ROOM -> {
 
+                }
+                LOGOUT_SUCCESS -> {
+                    startActivity(LoginActivity::class.java)
                 }
             }
         }

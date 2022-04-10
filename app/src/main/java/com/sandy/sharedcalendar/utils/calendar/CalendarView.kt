@@ -1,4 +1,4 @@
-package com.sandy.sharedcalendar
+package com.sandy.sharedcalendar.utils.calendar
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -15,6 +15,8 @@ import androidx.annotation.RequiresApi
 import androidx.annotation.StyleRes
 import androidx.core.content.withStyledAttributes
 import androidx.core.view.children
+import com.sandy.sharedcalendar.DayView
+import com.sandy.sharedcalendar.R
 import com.sandy.sharedcalendar.data.MonthItem
 import java.lang.Integer.max
 
