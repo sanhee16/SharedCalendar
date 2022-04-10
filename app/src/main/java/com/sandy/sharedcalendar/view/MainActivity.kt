@@ -6,8 +6,8 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.sandy.sharedcalendar.R
 import com.sandy.sharedcalendar.databinding.ActivityMainBinding
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGOUT_SUCCESS
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.START_ACTIVITY_CREATE_ROOM
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.LOGOUT_SUCCESS
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.START_ACTIVITY_CREATE_ROOM
 import com.sandy.sharedcalendar.viewModel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

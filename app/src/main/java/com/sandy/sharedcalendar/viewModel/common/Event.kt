@@ -1,4 +1,4 @@
-package com.sandy.sharedcalendar
+package com.sandy.sharedcalendar.viewModel.common
 
 
 open class Event<out T>(private val content: T) {

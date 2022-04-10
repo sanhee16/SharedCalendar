@@ -1,9 +1,8 @@
-package com.sandy.sharedcalendar.viewModel
+package com.sandy.sharedcalendar.viewModel.common
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sandy.sharedcalendar.Event
 
 open class BaseViewModel : ViewModel() {
     private val _viewEvent = MutableLiveData<Event<Any>>()

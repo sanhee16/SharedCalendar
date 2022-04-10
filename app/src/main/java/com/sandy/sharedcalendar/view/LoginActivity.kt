@@ -8,8 +8,8 @@ import com.sandy.sharedcalendar.R
 import com.sandy.sharedcalendar.databinding.ActivityLoginBinding
 import com.sandy.sharedcalendar.viewModel.LoginViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGIN_FAIL
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGIN_SUCCESS
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.LOGIN_FAIL
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.LOGIN_SUCCESS
 
 class LoginActivity : BaseActivity() {
     private lateinit var binding: ActivityLoginBinding

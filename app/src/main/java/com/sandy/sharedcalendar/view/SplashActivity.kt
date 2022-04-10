@@ -1,35 +1,14 @@
 package com.sandy.sharedcalendar.view
 
-import android.content.ContentValues.TAG
-import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
-import com.google.gson.Gson
-import com.kakao.sdk.auth.AuthApiClient
-import com.kakao.sdk.auth.model.OAuthToken
-import com.kakao.sdk.common.model.AuthErrorCause
-import com.kakao.sdk.common.model.ClientError
-import com.kakao.sdk.common.model.ClientErrorCause
-import com.kakao.sdk.user.UserApiClient
 import com.sandy.sharedcalendar.R
-import com.sandy.sharedcalendar.data.Test
-import com.sandy.sharedcalendar.databinding.ActivityLoginBinding
-import com.sandy.sharedcalendar.remote.RetrofitClass
-import com.sandy.sharedcalendar.viewModel.LoginViewModel
-import org.json.JSONArray
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import com.kakao.sdk.common.model.KakaoSdkError
 import com.sandy.sharedcalendar.databinding.ActivitySplashBinding
-import com.sandy.sharedcalendar.viewModel.BaseViewModel
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGIN_FAIL
-import com.sandy.sharedcalendar.viewModel.BaseViewModel.Companion.LOGIN_SUCCESS
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.LOGIN_FAIL
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel.Companion.LOGIN_SUCCESS
 import com.sandy.sharedcalendar.viewModel.SplashViewModel
 
 class SplashActivity : BaseActivity() {

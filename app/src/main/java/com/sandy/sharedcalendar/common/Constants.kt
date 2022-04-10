@@ -1,4 +1,4 @@
-package com.sandy.sharedcalendar
+package com.sandy.sharedcalendar.common
 
 class Constants {
     companion object {

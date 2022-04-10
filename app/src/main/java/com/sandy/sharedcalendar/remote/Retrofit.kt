@@ -1,6 +1,6 @@
 package com.sandy.sharedcalendar.remote
 
-import com.sandy.sharedcalendar.Constants
+import com.sandy.sharedcalendar.common.Constants
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

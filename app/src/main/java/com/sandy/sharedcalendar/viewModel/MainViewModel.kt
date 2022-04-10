@@ -3,7 +3,7 @@ package com.sandy.sharedcalendar.viewModel
 import android.util.Log
 import com.kakao.sdk.user.UserApiClient
 import com.kakao.sdk.user.rx
-import com.sandy.sharedcalendar.remote.KakaoRemote
+import com.sandy.sharedcalendar.viewModel.common.BaseViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.addTo
