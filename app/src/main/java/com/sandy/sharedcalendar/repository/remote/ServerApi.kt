@@ -2,6 +2,8 @@ package com.sandy.sharedcalendar.repository.remote
 
 import com.sandy.sharedcalendar.data.MemberInfo
 import com.sandy.sharedcalendar.data.Test
+import com.sandy.sharedcalendar.data.response.EmptyResponse
+import com.sandy.sharedcalendar.data.response.ListResponse
 import io.reactivex.Completable
 import io.reactivex.Maybe
 import io.reactivex.Observable
@@ -20,10 +22,10 @@ interface ServerApi {
 //    fun getTestList(): Call<List<Test>>
 
     @POST("member/insert")
-    fun insertMember(@Body memberInfo: MemberInfo): Single<Response<MemberInfo>>
+    fun insertMember(@Body memberInfo: MemberInfo): Single<Response<EmptyResponse>>
 
     @GET("member/select")
-    fun getMember(): Single<Response<List<MemberInfo>>>
+    fun getMember(): Single<ListResponse<MemberInfo>>
 
 
 }

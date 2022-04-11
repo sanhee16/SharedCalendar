@@ -95,10 +95,12 @@ class LoginViewModel(
         runDisposable(
             UserApiClient.rx.me()
                 .flatMap { user ->
+                    Log.v("sandy-TAG","id : ${user.id}")
                     retrofitModule.api.insertMember(
                         MemberInfo(
                             user.kakaoAccount?.name,
-                            user.kakaoAccount?.email
+                            user.kakaoAccount?.email,
+                            user.id
                         )
                     )
                 }.map { t -> if (t.isSuccessful) t else throw HttpException(t) },
