@@ -1,15 +1,14 @@
 package com.sandy.sharedcalendar.di
 
-import com.sandy.sharedcalendar.remote.KakaoRemote
+import com.sandy.sharedcalendar.repository.remote.RetrofitModule
 import com.sandy.sharedcalendar.viewModel.*
-import org.koin.android.ext.koin.androidApplication
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.dsl.koinApplication
 import org.koin.dsl.module
+import retrofit2.Retrofit
 
 val viewModelModules = module {
     viewModel { MainViewModel() }
-    viewModel { LoginViewModel() }
+    viewModel { LoginViewModel(get()) }
     viewModel { SplashViewModel() }
     viewModel { CalendarViewModel() }
     viewModel { CreateRoomViewModel() }
@@ -21,4 +20,5 @@ val repository = module {
 }
 
 val util = module {
+    single { RetrofitModule }
 }

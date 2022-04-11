@@ -35,4 +35,19 @@ class MainViewModel(
                 return@subscribe
             }).addTo(disposables)
     }
+
+    fun withdraw() {
+        var disposables = CompositeDisposable()
+        // 연결 끊기
+        UserApiClient.rx.unlink()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                Log.i("sandy-TAG", "연결 끊기 성공. SDK에서 토큰 삭제 됨")
+                viewEvent(LOGOUT_SUCCESS)
+            }, { error ->
+                Log.e("sandy-TAG", "연결 끊기 실패", error)
+                viewEvent(LOGOUT_FAIL)
+            }).addTo(disposables)
+    }
 }
